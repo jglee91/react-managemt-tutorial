@@ -66,10 +66,10 @@ class App extends Component {
           </TableHead>
           <TableBody>
             {this.state.customers
-              ? this.state.customers.map((customer) => { return ( <Customer key={customer.id} id={customer.id} image={customer.image} name={customer.name} birthday={customer.birth} gender={customer.gender} job={customer.job} />)})
+              ? this.state.customers.map((customer) => { return ( <Customer key={customer.id} id={customer.id} image={customer.image} name={customer.name} birthday={customer.birthday} gender={customer.gender} job={customer.job} />)})
               :
               <TableRow>
-                <TableCell colspan="6" align="center">
+                <TableCell colSpan="6" align="center">
                   <CircularProgress className={classes.progress} value={this.state.completed}></CircularProgress>
                 </TableCell>
               </TableRow>
