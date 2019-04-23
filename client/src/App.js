@@ -77,14 +77,15 @@ class App extends Component {
                 <TableCell>생년월일</TableCell>
                 <TableCell>성별</TableCell>
                 <TableCell>직업</TableCell>
+                <TableCell>설정</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {this.state.customers
-                ? this.state.customers.map((customer) => { return ( <Customer key={customer.id} id={customer.id} image={customer.image} name={customer.name} birthday={customer.birthday} gender={customer.gender} job={customer.job} />)})
+                ? this.state.customers.map((customer) => { return ( <Customer stateRefresh={this.stateRefresh} key={customer.id} id={customer.id} image={customer.image} name={customer.name} birthday={customer.birthday} gender={customer.gender} job={customer.job} />)})
                 :
                 <TableRow>
-                  <TableCell colSpan="6" align="center">
+                  <TableCell colSpan="7" align="center">
                     <CircularProgress className={classes.progress} value={this.state.completed}></CircularProgress>
                   </TableCell>
                 </TableRow>
